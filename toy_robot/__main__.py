@@ -1,7 +1,6 @@
 """
 Toy Robot Simulation
 Takes text file as input and outputs the pose.
-Author: William Jiang
 """
 import os
 import sys

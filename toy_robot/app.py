@@ -1,7 +1,6 @@
 """
 Defines the App Class with run method to execute the instruction on the robot given a file
 path
-Author: William Jiang
 """
 import os
 import sys

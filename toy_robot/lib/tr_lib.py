@@ -1,6 +1,5 @@
 """
 Defines the Robot and Table classes required for __main__.py
-Author: William Jiang
 """
 
 class Table:

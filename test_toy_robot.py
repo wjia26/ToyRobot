@@ -1,6 +1,5 @@
 """
 Toy Robot Unit/Integration Testing
-Author: William Jiang
 """
 import os
 import sys
