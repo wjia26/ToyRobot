@@ -42,6 +42,32 @@ class Robot:
             self.on_table=True
         
         return [self.x,self.y,self.f]
+    def move(self,table_obj):
+        x_dim,y_dim=table_obj.get_dim()
+        if self.f=="NORTH":
+            if self.y==y_dim:
+                pass
+            else:
+                self.y+=1
+        elif self.f=="EAST":
+            if self.x==x_dim:
+                pass
+            else:
+                self.x+=1
+        elif self.f=="WEST":
+            if self.x==0:
+                pass
+            else:
+                self.x-=1
+        elif self.f=="SOUTH":
+            if self.x==0:
+                pass
+            else:
+                self.y-=1
+        else:
+            raise ValueError
+
+        return [self.x,self.y,self.f]
 
     def left(self):
         next_ind=self.f_arr.index(self.f)+1
@@ -66,3 +92,14 @@ class Robot:
 
     def report(self):      
         return [self.x,self.y,self.f]
+    def is_on_table(self):
+
+        return self.on_table
+    
+    def reset(self):
+   
+        self.x,self.y,self.f=None,None,None
+        self.on_table=False
+        return [self.x,self.y,self.f]
+    
+

@@ -16,10 +16,11 @@ class RobotTest(unittest.TestCase):
     def tearDown(self):
         
     def test_table(self):
-        """
-        Unit test for Table.get_dim method
-        """
         self.assertEqual(self.table_top.get_dim(),(5,5))
+    def test_move(self):
+
+        self.robot.place(1,1,'WEST',self.table_top)
+        self.assertEqual(self.robot.move(self.table_top),[0,1,'WEST'])
 
     def test_place(self):
         self.assertEqual(self.robot.place(1,1,'WEST',self.table_top),[1,1,'WEST'])
@@ -32,6 +33,12 @@ class RobotTest(unittest.TestCase):
         self.assertEqual(self.robot.right(),[1,1,'NORTH'])
     def test_report(self):
         self.assertEqual(self.robot.report(),[1,1,'WEST'])
+    def test_report(self):
+
+        self.assertEqual(self.robot.report(),[1,1,'WEST'])
+        
+    def test_is_on_table(self):
+        self.assertEqual(self.robot.is_on_table(),True)  
 if __name__ == "__main__":
     unittest.main()
     
