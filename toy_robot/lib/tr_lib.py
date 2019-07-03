@@ -4,7 +4,21 @@ Author: William Jiang
 """
 
 class Table:
+    """
+    A class used to represent a Tabletop.
 
+    Attributes:
+    -----------
+    x_dim: int
+        Number of units of the x dimension
+    y_dim: int
+        Number of units of the y dimension
+
+    Methods
+    -------
+    get_dim():
+        Returns the dimensions of the table in the form x_dim,y_dim
+    """
     def __init__(self,x,y):
         self.x_dim=x
         self.y_dim=y
@@ -12,7 +26,20 @@ class Table:
         return self.x_dim,self.y_dim
         
 class Robot:
+    """
+    A class used to represent a Toy Robot.
 
+    Attributes:
+    -----------
+    x: int
+        The x position of the Toy Robot.
+    y: int
+        The y position of the Toy Robot.
+    f: string
+        The orientation of the Toy Robot. i.e. NORTH/SOUTH/EAST/WEST
+    on_table: Boolean
+        Whether the Toy Robot is on the table.
+    """
     def __init__(self):
         
         self.x,self.y,self.f=None,None,None
@@ -21,7 +48,16 @@ class Robot:
         self.f_arr=["EAST","NORTH","WEST","SOUTH"]
 
     def cmd(self,line,table_obj):
-   
+        """
+        Command interpreter. Accepts string-command inputs and calls methods based on it.
+        
+        Parameters
+        ----------
+        line: string
+            The command-string given to the robot. i.e. PLACE/MOVE/LEFT/etc...
+        table_obj: Table.Object
+            The instiantiated object of the table.
+        """
         arr_cmd=line.split()
         command=arr_cmd[0]
         if(command=='PLACE'):

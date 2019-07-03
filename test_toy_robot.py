@@ -80,11 +80,31 @@ class RobotTest(unittest.TestCase):
         """
         self.assertEqual(self.robot.is_on_table(),True)       
     
-
+    def test_full(self):
+        """
+        Full Integration test. Loops through the 5 test cases in ./test_cases and compares to solutions.
+        """
+        solutions=[
+            [0,5,"NORTH"],
+            [0,0,"WEST"],
+            [3,3,"NORTH"],
+            [2,5,"WEST"],
+            [None,None,None]
+            ]
+        n=0
+        for filename in os.listdir(directory):
+            if filename.endswith(".txt"):
+                report=App.run(directory + filename)
+            self.assertEqual(report,solutions[n])
+            n=n+1
 
         
             
 if __name__ == "__main__":
- 
+    """
+    Runs Unit tests from the test_cases folder and loops through each line of instruction.
+    Instructions are then fed into an instiantiated Robot Object called: "robot"
+    Two classes are used from the lib directory: Table, Robot. 
+    """
     unittest.main()
     

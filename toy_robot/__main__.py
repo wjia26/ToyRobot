@@ -10,6 +10,11 @@ from toy_robot.app import App
 
           
 if __name__ == "__main__":
+    """
+    Reads Path to text file from stdin and loops through each line of instruction.
+    Instructions are then fed into an instiantiated Robot Object called: "robot"
+    Two classes are used from the lib directory: Table, Robot. 
+    """
     #Add argument to parse from command line. Will locate the text file required for the instructions
     ap = argparse.ArgumentParser(description='Toy Robot Application')
     ap.add_argument('-t','--textfile', help="Path to text file containing Robot instructions")

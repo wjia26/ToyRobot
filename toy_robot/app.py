@@ -12,6 +12,14 @@ class App:
     Class to run the app
     """    
     def run(file_path):
+        """
+        Method used to run the app via a text file path.
+
+        Attributes:
+        -----------
+        file_path: string
+            Path to text file containing the instructions for the robot. 
+        """
         f = open(file_path)
         line = f.readline() 
         robot=Robot() 
