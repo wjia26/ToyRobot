@@ -24,7 +24,14 @@ class RobotTest(unittest.TestCase):
     def test_place(self):
         self.assertEqual(self.robot.place(1,1,'WEST',self.table_top),[1,1,'WEST'])
         
-            
+    def test_left(self):
+
+        self.assertEqual(self.robot.left(),[1,1,'SOUTH'])
+        
+    def test_right(self):
+        self.assertEqual(self.robot.right(),[1,1,'NORTH'])
+    def test_report(self):
+        self.assertEqual(self.robot.report(),[1,1,'WEST'])
 if __name__ == "__main__":
     unittest.main()
     

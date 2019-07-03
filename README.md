@@ -8,6 +8,11 @@ This package simulates the Toy Robot as per PROBLEM.md
 Examples
 ------------------------
 
+Unit/Integration testing
+-----------
+The unit testing can be run via the command-line:
+
+    python test_toy_robot.py
 ### Example a
 Example input text file:
 

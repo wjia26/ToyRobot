@@ -42,3 +42,27 @@ class Robot:
             self.on_table=True
         
         return [self.x,self.y,self.f]
+
+    def left(self):
+        next_ind=self.f_arr.index(self.f)+1
+        if next_ind>3:
+            next_ind=0
+        else:
+            next_ind
+        self.f=self.f_arr[next_ind]
+        #Take the value of the next index
+        return [self.x,self.y,self.f]
+            
+    def right(self):)
+        next_ind=self.f_arr.index(self.f)-1
+        if next_ind<0:
+            next_ind=3
+        else:
+            next_ind
+        #Take the value of the next index
+        self.f=self.f_arr[next_ind]
+
+        return [self.x,self.y,self.f]
+
+    def report(self):      
+        return [self.x,self.y,self.f]
